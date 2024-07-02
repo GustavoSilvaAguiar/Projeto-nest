@@ -25,7 +25,7 @@ export class CoursesController {
   } */
 
   @Get('list/:id')
-  findOne(@Param('id') id: number) {
+  findOne(@Param('id') id: string) {
     return this.courseService.findOne(id);
   }
 
@@ -35,12 +35,12 @@ export class CoursesController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: number, @Body() body) {
+  update(@Param('id') id: string, @Body() body) {
     return this.courseService.update(id, body);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: number) {
+  remove(@Param('id') id: string) {
     this.courseService.remove(id);
   }
 }

@@ -12,7 +12,8 @@ import { CreateCourseDTO } from './DTO/create-course.dto';
 
 @Controller('courses')
 export class CoursesController {
-  constructor(private readonly courseService: CoursesService) {}
+  private readonly courseService: CoursesService;
+  constructor(/* private readonly courseService: CoursesService */) {}
 
   @Get('list')
   findAll() {

@@ -8,7 +8,7 @@ import { updateCourseDTO } from './DTO/update-course.dto';
 
 @Injectable()
 export class CoursesService {
-  constructor() {}
+  //constructor() {}
 
   @InjectRepository(Course)
   private readonly courseRepository: Repository<Course>;

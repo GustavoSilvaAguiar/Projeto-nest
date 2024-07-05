@@ -6,9 +6,19 @@ services:
     container_name: devtraining-db
     restart: always
     ports:
-      - "5440:5432"
+      - '5440:5432'
     volumes:
       - .docker/dbdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=devtraining
+
+  dbtest:
+    build: .
+    container_name: test-db
+    restart: always
+    ports:
+      - '5441:5432'
     environment:
       - POSTGRES_PASSWORD=docker
       - POSTGRES_DB=devtraining
